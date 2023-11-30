@@ -6,7 +6,7 @@ import reportWebVitals from './reportWebVitals';
 
 import { registerLicense } from '@syncfusion/ej2-base';
 registerLicense(process.env.REACT_APP_SYNCFUSION_KEY);
-
+console.log('your key is',process.env.REACT_APP_SYNCFUSION_KEY)
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
