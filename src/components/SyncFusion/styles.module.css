@@ -1,0 +1,30 @@
+.control_pane {
+    direction: ltr;
+    height:100%;
+    width:100%;
+
+
+    .control_actions {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        margin: 10px;
+        gap: 10px;
+        top: 0;
+        inset-inline: 0;
+        z-index: 2;
+        position: absolute;
+    }
+
+    .control_section {
+        height: 100%;
+        width: 100%;
+    }
+
+}
+.control_pane rect {
+    height: 250px;
+}
+.control_pane svg {
+    height: 250px;
+}

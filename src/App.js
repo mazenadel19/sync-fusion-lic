@@ -1,23 +1,32 @@
-import logo from './logo.svg';
 import './App.css';
+import { ProgressBar, ResourceAllocation, StackedBar100 } from './components/SyncFusion/';
+import { stackedBarDataSource } from './components/fakeData/fakeSyncFusionStackedBar100';
+
+import {
+  columnsDirective,
+  dataSource,
+  resources,
+} from './components/fakeData/fakeSyncFusionResourceAllocation';
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <StackedBar100
+        dataSource={stackedBarDataSource}
+        tooltipRender={(args) => {
+          args.text = `${args.point.y} custom tooltip`;
+        }}
+      />
+      <br /><br />
+      <ProgressBar value={15} />
+      <br /><br />
+      <br /><br />
+      <ResourceAllocation
+        dataSource={dataSource}
+        resources={resources}
+        columnsDirective={columnsDirective}
+      />
     </div>
   );
 }
